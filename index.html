@@ -8,63 +8,30 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>Git Hooks | Dozier Hudson</title>
+	<title>Git Hooks | Matthew Hudson</title>
 	
-	<meta name="description" content="A introductory guide and resource for git hooks. Created by Dozier Hudson, a programmer experimenting with WebHooks." /> 
-	<meta name="author" content="Dozier Hudson" />
+	<meta name="description" content="A introductory guide and resource for git hooks. Created by Matthew Hudson, a programmer experimenting with combining Git + WebHooks + Webpipes." /> 
+	<meta name="author" content="Matthew Hudson" />
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	
 
-	<meta property="fb:admins" content="100003237408540" />
+	<meta property="fb:admins" content="25102034" />
 	<meta property="og:site_name" content="GitHooks" />
 
-	<meta property="og:description" content="A introductory guide and resource for git hooks. Created by Dozier Hudson, a programmer experimenting with WebHooks." />
+	<meta property="og:description" content="A introductory guide and resource for git hooks. Created by Matthew Hudson, a programmer experimenting with combing Git + WebHooks + Webpipes." />
 	<meta property="og:locale" content="en_US" />
 
 	
-		<meta property="og:image" content="http://26.media.tumblr.com/avatar_51fa987e6750_128.png" />
+		<meta property="og:image" content="http://www.matthewghudson.com/Matthew-Hudson.jpg" />
 		<meta property="og:title" content="Learn how to improve your git skills" />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="http://www.githooks.com/" /> 
 
 	<link rel="canonical" href="http://www.githooks.com/" /> 
 	
-	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+	<link rel="stylesheet" href="http://www.matthewghudson.com/assets/css/projects.css">
 	
-	<style type="text/css">
-		body {
-			margin: 35px 0px;
-			background-color: #FAF7F7;
-			background-image: -moz-radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
-			background-image: -webkit-radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
-			background-image: -o-radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
-			background-image: -ms-radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
-			background-image: radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
-			font-family: "helvetica neue",arial,sans-serif;
-			font-size: 14px;
-			line-height: 20px;
-			color: #211922;
-			text-shadow: 0 1px white;
-		}
-		
-		body > .container {
-			margin-top:70px;
-		}
-		.hero-unit {
-			background-color:#FFFDE8;
-		}
-		#footer {
-			margin-top:60px;
-		}
-		hr.soften {
-			border:#FFFDE8;
-			margin: 30px 0;
-		}
-		a.brand {
-			text-shadow:none;
-		}
-	</style>
 </head>
 
 <body>
@@ -122,7 +89,7 @@
 				<hr class="soften">
 				<h2>How do I implement git hooks?</h2>
 				<p>
-					The short and easy: Write a script and make it executable.
+					The short and easy: Overwrite one of the scripts in <code>.git/hooks</code> and make it executable.
 				</p>
 			
 				<hr class="soften">
@@ -134,31 +101,31 @@
 				
 				<hr class="soften">
 				<h2>Contribute</h2>
-				<p>If you have a git hook you love, or a resource you've written for the community - please get in touch with <a href="http://blog.dozierhudson.com/">me</a>.</p>
+				<p>If you have a git hook you love, or a resource you've written for the community - please get in touch with <a href="http://blog.matthewghudson.com/">me</a>.</p>
 				
 				<hr class="soften">
 				<h2>Maintainer</h2>
-				<p>Hi, my name is <a href="http://blog.dozierhudson.com/">Dozier Hudson</a> and I created this guide to help myself and others wrap our head around integrating git hooks with webhooks.</p>
-				<p><a href="http://twitter.com/duzour" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @duzour</a></p>
+				<p>Hi, my name is <a href="http://blog.matthewghudson.com/">Matthew Hudson</a> and I created this guide to help myself and others wrap our head around integrating git hooks with webhooks.</p>
+				<p><a href="http://twitter.com/matthewgh" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @matthewgh</a></p>
 			</div>
 		</div> 
-		
-
 	</div> <!--! end of .container -->
 	
 	<script src="http://platform.twitter.com/widgets.js" async></script> 
-	<script src="http://connect.facebook.net/en_US/all.js#xfbml=1" async></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 	<script>
+		// Load my webfonts.
+		WebFont.load({
+			google: {
+				families: ["Lato"]
+			}
+		});
 	
 		// Load Google Analytics.
 		var _gaq=[['_setAccount','UA-24713517-9'],['_trackPageview'],['_trackPageLoadTime']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));
-		
-
-		
 	</script>
 
 </body>
