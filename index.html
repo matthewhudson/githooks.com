@@ -118,13 +118,14 @@
 		<div id="body" class="row"> 
 			<div class="span16">
 				<h2>What are Git hooks?</h2>
-				<p>it hooks are scripts that Git executes before or after events such as: commit, push, and receive. Git hooks are a built-in feature - no need to download anything. Git hooks are run locally.</p> 
+				<p>Git hooks are scripts that Git executes before or after events such as: commit, push, and receive. Git hooks are a built-in feature - no need to download anything. Git hooks are run locally.</p> 
 				
 				<p>These hook scripts are only limited by a developer's imagination. Some example hook scripts include: </p>
 				
 				<ul>
 					<li>pre-commit: Check the commit message for spelling errors.</li>
-					<li>pre-commit: Email/SMS team members of a new commit.</li>
+                                        <li>pre-receive: Enforce project coding standards.</li>
+					<li>post-receive: Email/SMS team members of a new commit.</li>
 					<li>post-receive: Push the code to production.</li>
 				</ul>
 				
@@ -135,19 +136,26 @@
 				<p>Here's a full list of hooks you can attach scripts to:</p>
 				<ul>
 					<li>applypatch-msg</li>
-					<li>post-commit</li>
-					<li>post-update</li>
-					<li>pre-commit</li>
-					<li>update</li>
-					<li>commit-msg</li>
-					<li>post-receive</li>
 					<li>pre-applypatch</li>
+					<li>post-applypatch</li>
+					<li>pre-commit</li>
+					<li>prepare-commit-msg</li>
+					<li>commit-msg</li>
+					<li>post-commit</li>
 					<li>pre-rebase</li>
+					<li>post-checkout</li>
+					<li>post-merge</li>
+					<li>pre-receive</li>
+					<li>update</li>
+					<li>post-receive</li>
+					<li>post-update</li>
+					<li>pre-auto-gc</li>
+					<li>post-rewrite</li>
 				</ul>
 
 				<hr class="soften">
 				<h2>Why should I care?</h2>
-				<p>Fair question! Git hooks can greatly increase your productivity as a developer. Being able to push to your staging or production environment without ever leaving Git is just plain awesome. Update your code, make a commit and push, and you're code can be running in any environment you specify. No need to mess with ssh or ftp. </p>
+				<p>Fair question! Git hooks can greatly increase your productivity as a developer. Being able to push to your staging or production environment without ever leaving Git is just plain awesome. Update your code, make a commit and push, and your code can be running in any environment you specify. No need to mess with ssh or ftp.</p>
 				
 				<hr class="soften">
 				<h2>How do I implement Git hooks?</h2>
