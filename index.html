@@ -132,6 +132,23 @@
 				<hr class="soften">
 				<h2>How do they work?</h2>
 				<p>Every Git repository has a <code>.git/hooks</code> folder with a script for each hook you can bind to. You're free to change or update these scripts as necessary, and Git will execute them when those events occur.</p>
+
+
+				<hr class="soften">
+				<h2>Why should I care?</h2>
+				<p>Fair question! Git hooks can greatly increase your productivity as a developer. Being able to push to your staging or production environment without ever leaving Git is just plain awesome. Update your code, make a commit and push, and your code can be running in any environment you specify. No need to mess with ssh or ftp.</p>
+				
+				<hr class="soften">
+				<h2>Where can I download Git hooks?</h2>
+				<p>
+					<a href="https://npmjs.org/package/node-hooks">Hooks</a> is a command line git hook management tool that is currently being developed.
+				</p>
+				
+				<hr class="soften">
+				<h2>How do I implement Git hooks?</h2>
+				<p>
+					The short and easy: Overwrite one of the scripts in <code>.git/hooks</code> and make it executable.
+				</p>
 				
 				<p>Here's a full list of hooks you can attach scripts to:</p>
 				<ul>
@@ -152,16 +169,6 @@
 					<li>pre-auto-gc</li>
 					<li>post-rewrite</li>
 				</ul>
-
-				<hr class="soften">
-				<h2>Why should I care?</h2>
-				<p>Fair question! Git hooks can greatly increase your productivity as a developer. Being able to push to your staging or production environment without ever leaving Git is just plain awesome. Update your code, make a commit and push, and your code can be running in any environment you specify. No need to mess with ssh or ftp.</p>
-				
-				<hr class="soften">
-				<h2>How do I implement Git hooks?</h2>
-				<p>
-					The short and easy: Overwrite one of the scripts in <code>.git/hooks</code> and make it executable.
-				</p>
 			
 				<hr class="soften">
 				<h2>Reading</h2>
