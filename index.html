@@ -9,25 +9,25 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
 	<title>Git Hooks | Learn how to use pre-commit hooks, post-commit hooks, post-receive hooks, and more. | Matthew Hudson</title>
-	
-	<meta name="description" content="An introductory guide and resource for Git hooks. Learn how to use pre-commit hooks, post-commit hooks, post-receive hooks, and more. Created by Matthew Hudson, a programmer experimenting with combining Git + WebHooks + Webpipes." /> 
+
+	<meta name="description" content="An introductory guide and resource for Git hooks. Learn how to use pre-commit hooks, post-commit hooks, post-receive hooks, and more. Created by Matthew Hudson, a programmer experimenting with combining Git + WebHooks + Webpipes." />
 	<meta name="author" content="Matthew Hudson" />
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	
+
 
 	<meta property="fb:admins" content="25102034" />
 	<meta property="og:site_name" content="GitHooks" />
 
 	<meta property="og:description" content="An introductory guide and resource for Git hooks. Learn how to use pre-commit hooks, post-commit hooks, post-receive hooks, and more. Created by Matthew Hudson, a programmer experimenting with combing Git + WebHooks + Webpipes." />
-	<meta property="og:locale" content="en_US" />	
+	<meta property="og:locale" content="en_US" />
 	<meta property="og:image" content="http://www.matthewghudson.com/Matthew-Hudson.jpg" />
 	<meta property="og:title" content="Learn how to improve your Git skills" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://www.githooks.com/" /> 
+	<meta property="og:url" content="http://www.githooks.com/" />
 
-	<link rel="canonical" href="http://www.githooks.com/" /> 
-	
+	<link rel="canonical" href="http://www.githooks.com/" />
+
 	<link rel="author" href="https://plus.google.com/116184875130897010742/posts"/>
 	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 
@@ -39,17 +39,17 @@
 			font-size:1.15em;
 			margin-bottom: 1.25em;
 		}
-		
-		h2 { 
+
+		h2 {
 			font-size:22px;
 			line-height:30px;
 		}
-		
-		.container, 
+
+		.container,
 		.container li {
 			line-height:1.6em;
 		}
-		
+
 		/* Webfont loading hack, prevent FOUC. */
 		* {
 			visibility:hidden;
@@ -62,7 +62,7 @@
 		.navbar-inner {
 			background:#90150E;
 		}
-		
+
 		.navbar .brand,
 		.navbar .brand a {
 			color:#fff;
@@ -71,20 +71,20 @@
 			margin-bottom:0;
 			line-height:1.25em;
 		}
-		
+
 		.brand:hover {
 			background-color: #333;
 			background-color: rgba(255, 255, 255, 0.05);
 			color: #ffffff;
 			text-decoration: none;
 		}
-		
+
 		ul, ol {
 			padding: 0;
 			margin: 0 0 0.5em 2.5em;
 			color: #444;
 		}
-		
+
 		li {
 			color:#444;
 		}
@@ -92,7 +92,7 @@
 		hr.soften {
 			margin: 1.5em 0 1.25em 0;
 		}
-		
+
 		a, a:visited, a:active {
 			color: #90150E;
 			text-decoration: none;
@@ -103,36 +103,36 @@
 			color:#444;
 		}
 	</style>
-	
+
 </head>
 
 <body>
 	<div class="navbar">
-      <div class="navbar-inner">
-		<a class="brand" href="/">Git Hooks</a>
-      </div>
-    </div>
-	
+		<div class="navbar-inner">
+			<a class="brand" href="/">Git Hooks</a>
+		</div>
+	</div>
+
 	<div class="container">
 
-		<div id="body" class="row"> 
+		<div id="body" class="row">
 			<div class="span16">
 				<h2>What are Git hooks?</h2>
-				<p>Git hooks are scripts that Git executes before or after events such as: commit, push, and receive. Git hooks are a built-in feature - no need to download anything. Git hooks are run locally.</p> 
-				
+				<p>Git hooks are scripts that Git executes before or after events such as: commit, push, and receive. Git hooks are a built-in feature - no need to download anything. Git hooks are run locally.</p>
+
 				<p>These hook scripts are only limited by a developer's imagination. Some example hook scripts include: </p>
-				
+
 				<ul>
 					<li>pre-commit: Check the commit message for spelling errors.</li>
-                                        <li>pre-receive: Enforce project coding standards.</li>
+					<li>pre-receive: Enforce project coding standards.</li>
 					<li>post-commit: Email/SMS team members of a new commit.</li>
 					<li>post-receive: Push the code to production.</li>
 				</ul>
-				
+
 				<hr class="soften">
 				<h2>How do they work?</h2>
 				<p>Every Git repository has a <code>.git/hooks</code> folder with a script for each hook you can bind to. You're free to change or update these scripts as necessary, and Git will execute them when those events occur.</p>
-				
+
 				<p>Here's a full list of hooks you can attach scripts to:</p>
 				<ul>
 					<li><a href="https://github.com/git/git/blob/master/templates/hooks--applypatch-msg.sample">applypatch-msg</a></li>
@@ -157,17 +157,17 @@
 				<hr class="soften">
 				<h2>Why should I care?</h2>
 				<p>Fair question! Git hooks can greatly increase your productivity as a developer. Being able to push to your staging or production environment without ever leaving Git is just plain awesome. Update your code, make a commit and push, and your code can be running in any environment you specify. No need to mess with ssh or ftp.</p>
-				
+
 				<hr class="soften">
 				<h2>How do I implement Git hooks?</h2>
 				<p>
 					The short and easy: Overwrite one of the scripts in <code>.git/hooks</code> and make it executable.
 				</p>
-			
+
 				<hr class="soften">
 				<h2>Reading</h2>
 				<ul>
-					<li><a href="http://ryanflorence.com/deploying-websites-with-a-tiny-git-hook/">Deploying websites with a Git hook</a></li> 
+					<li><a href="http://ryanflorence.com/deploying-websites-with-a-tiny-git-hook/">Deploying websites with a Git hook</a></li>
 					<li><a href="http://longair.net/blog/2011/04/09/missing-git-hooks-documentation/">The missing Git hooks documentation</a></li>
 					<li><a href="http://omerkatz.com/blog/git-hooks-part-i-the-basics">Git Hooks (Part I): The Basics</a></li>
 					<li><a href="http://codeinthehole.com/writing/tips-for-using-a-Git-pre-commit-hook/">Tips for using Git pre commit hook</a></li>
@@ -176,6 +176,7 @@
 				<hr class="soften">
 				<h2>Projects</h2>
 				<ul>
+					<li><a href="https://github.com/brigade/overcommit">overcommit</a> - A well-maintained, up-to-date, flexible Git hook manager.</li>
 					<li><a href="https://github.com/mroth/lolcommits">Lolcommits</a> - Takes a snapshot with your webcam every time you git commit code, and archives a lolcat style image with it.</li>
 					<li><a href="http://pre-commit.com/">Pre-commit by Yelp</a> - A framework for managing and maintaining multi-language pre-commit hooks.</li>
 					<li><a href="https://npmjs.org/package/node-hooks">Hooks</a> is a command line git hook management tool.</li>
@@ -191,16 +192,16 @@
 				<hr class="soften">
 				<h2>Contribute</h2>
 				<p>If you have a Git hook you love, or a resource you've written for the community - please create a pull request <a href="https://github.com/matthewhudson/www.githooks.com/">here</a>.</p>
-				
+
 				<hr class="soften">
 				<h2>Maintainer</h2>
 				<p>Howdy, my name is <a href="http://blog.matthewghudson.com/">Matthew Hudson</a> and I created this guide to help myself and others wrap our head around integrating Git hooks with WebHooks.</p>
 				<p><a href="http://twitter.com/matthewgh" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @matthewgh</a></p>
 			</div>
-		</div> 
+		</div>
 	</div> <!--! end of .container -->
-	
-	<script src="http://platform.twitter.com/widgets.js" async></script> 
+
+	<script src="http://platform.twitter.com/widgets.js" async></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
 	<script>
 		// Load my webfonts.
@@ -209,7 +210,7 @@
 				families: ["Lato"]
 			}
 		});
-	
+
 		// Load Google Analytics.
 		var _gaq=[['_setAccount','UA-24713517-9'],['_trackPageview'],['_trackPageLoadTime']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
