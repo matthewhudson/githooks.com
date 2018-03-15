@@ -1,10 +1,18 @@
 # [GITHOOKS.COM](http://githooks.com)
 
-A guide to the wonders of git hooks. This repo is using [gh-pages](https://help.github.com/articles/creating-project-pages-manually).
+A guide to the wonders of git hooks. This repo is using [GitHub Pages](https://pages.github.com/y).
 
-## Contributing
+## Contributing to `githooks.com`
 
-This guide barely scrapes the surface. Please contribute your love and knowledge! 
- 
-1. Fork/clone it. 
-2. Make a change to the `gh-pages` branch and submit a Pull Request.
+:+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
+
+This guide barely scrapes the surface. Please contribute your love and knowledge!
+
+### Contributing Code
+
+1. Pull the repo
+2. Create a branch against `master` (`git checkout -b feature`)
+3. Make change(s)
+4. Commit your changes (`git commit -am 'Added a feature'`)
+5. Push to the branch (`git push origin feature`)
+6. Open a Pull Request
