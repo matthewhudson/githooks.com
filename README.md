@@ -1,6 +1,6 @@
 # [GITHOOKS.COM](http://githooks.com)
 
-A guide to the wonders of git hooks. This repo is using [GitHub Pages](https://pages.github.com/y).
+A guide to the wonders of git hooks. This repo is using [GitHub Pages](https://pages.github.com/).
 
 ## Contributing to `githooks.com`
 
