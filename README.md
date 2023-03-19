@@ -11,7 +11,7 @@ This guide barely scrapes the surface. Please contribute your love and knowledge
 ### Contributing Code
 
 1. Pull the repo
-2. Create a branch against `master` (`git checkout -b feature`)
+2. Create a branch against `main` (`git checkout -b feature`)
 3. Make change(s)
 4. Commit your changes (`git commit -am 'Added a feature'`)
 5. Push to the branch (`git push origin feature`)

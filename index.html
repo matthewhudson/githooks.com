@@ -11,13 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
     <title>
-      Git Hooks | Learn how to use pre-commit hooks, post-commit hooks,
-      post-receive hooks, and more. | Matthew Hudson
+      Git Hooks - A Guide for Programmers
     </title>
 
     <meta
       name="description"
-      content="An introductory guide and resource for Git hooks. Learn how to use pre-commit hooks, post-commit hooks, post-receive hooks, and more. Created by Matthew Hudson, a programmer experimenting with combining Git + WebHooks + Webpipes."
+      content="Git Hooks are a powerful tool for automating tasks in Git. Learn how to use them with this comprehensive guide for programmers."
     />
     <meta name="author" content="Matthew Hudson" />
 
@@ -28,7 +27,7 @@
 
     <meta
       property="og:description"
-      content="An introductory guide and resource for Git hooks. Learn how to use pre-commit hooks, post-commit hooks, post-receive hooks, and more. Created by Matthew Hudson, a programmer experimenting with combing Git + WebHooks + Webpipes."
+      content="Git Hooks are a powerful tool for automating tasks in Git. Learn how to use them with this comprehensive guide for programmers."
     />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Learn how to improve your Git skills" />
@@ -63,6 +62,13 @@
       .container,
       .container li {
         line-height: 1.75em;
+      }
+
+      .container li {
+        margin: 0 0 0.35em 1.5em;
+      }
+      
+      .container ul li {
         list-style-type: circle;
       }
 
@@ -220,12 +226,20 @@
           </p>
           <hr />
 
-          <h2 id="what-are-git-hooks">What are Git hooks?</h2>
+          <h2 id="introduction">Introduction</h2>
+          <p>Git Hooks are a built-in feature of Git that allow developers to automate tasks and enforce policies throughout the
+            Git workflow. By writing custom scripts that Git can execute at key points in the development process, Git Hooks
+            enable developers to streamline their workflow, ensure code quality, and enforce project-specific policies. In this
+            guide, we will explore Git Hooks and show you how to use them effectively.</p>
+          
+          <hr class="soften" />
+          <h2 id="what-are-git-hooks">What are Git Hooks?</h2>
           <p>
-            Git hooks are scripts that Git executes before or after events such
-            as: <b>commit</b>, <b>push</b>, and <b>receive</b>. Git hooks are a
-            built-in feature - no need to download anything. Git hooks are run
-            locally.
+            Git Hooks are scripts that Git can execute automatically when certain events occur, such as before or after a commit,
+            push, or merge. There are several types of Git Hooks, each with a specific purpose. Pre-commit hooks, for example, can
+            be used to enforce code formatting or run tests before a commit is made. Pre-push hooks can be used to prevent pushes to
+            certain branches or run additional tests before pushing. Post-merge hooks can be used to perform actions after a merge
+            is completed, such as updating dependencies or generating documentation.
           </p>
 
           <p>
@@ -243,13 +257,16 @@
           </ul>
 
           <hr class="soften" />
-          <h2 id="how-do-git-hooks-work">How do git hooks work?</h2>
+          <h2 id="how-to-use-git-hooks">How to Use Git Hooks:</h2>
           <p>
-            Every Git repository has a <code>.git/hooks</code> folder with a
-            script for each hook you can bind to. You're free to change or
-            update these scripts as necessary, and Git will execute them when
-            those events occur.
-          </p>
+            To use Git Hooks, you simply need to create executable scripts in the <code>.git/hooks</code> directory of your Git
+            repository. The
+            scripts should be named after the Git Hook event they correspond to (e.g., <code>pre-commit</code>,
+            <code>pre-push</code>, <code>post-merge</code>) and have
+            the appropriate permissions (<code>chmod +x</code>). Once the scripts are in place, Git will automatically execute them
+            at the
+            corresponding events.
+            </p>
 
           <p>Here's a full list of hooks you can attach scripts to:</p>
           <ul>
@@ -349,23 +366,25 @@
           </ul>
 
           <hr class="soften" />
-          <h2 id="why-should-i-care">Why should I care?</h2>
+          <h2 id="tips-for-writing-git-hooks">Tips for Writing Effective Git Hooks:</h2>
           <p>
-            Fair question! Git hooks can greatly increase your productivity as a
-            developer. For example, being able to push to your staging or
-            production environment without ever leaving Git is just plain
-            awesome. Update your code, make a commit and push, and your code can
-            be running in any environment you specify. No need to mess with ssh
-            or ftp.
+            When writing Git Hooks, it's important to keep a few things in mind:
           </p>
+          <ol>
+            <li><i>Git Hooks should be fast and reliable.</i> Slow or unreliable scripts can slow down the Git workflow and cause
+              errors.</li>
+            <li><i>Git Hooks should be well-documented.</i> Make sure to include comments in your scripts so that other developers
+              can
+              understand what they do.</li>
+            <li><i>Git Hooks should be non-intrusive.</i> Avoid scripts that modify code or files without the user's consent.</li>
+          </ol>
 
           <hr class="soften" />
-          <h2 id="how-do-i-implement-git-hooks">
-            How do I implement Git hooks?
-          </h2>
+          <h2 id="why-should-i-care">Conclusion</h2>
           <p>
-            The short and easy: Overwrite (or create) one of the scripts in
-            <code>.git/hooks</code> and make it executable.
+            Git Hooks are a powerful tool for automating tasks and enforcing policies in Git. By writing custom scripts that Git can
+            execute at key points in the development process, developers can streamline their workflow and ensure code quality. With
+            the tips and techniques outlined in this guide, you'll be able to use Git Hooks effectively in your own projects.
           </p>
 
           <hr class="soften" />
@@ -603,7 +622,7 @@
           <hr class="soften" />
           <h2 id="contribute">Contribute</h2>
           <p>
-            If you have a Git hook you love, or a resource you've written for
+            If you have a Git Hook you love, or a resource you've written for
             the community - please create a pull request
             <a href="https://github.com/matthewhudson/githooks.com/">here</a>.
           </p>
