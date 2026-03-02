@@ -37,7 +37,7 @@
     <link rel="canonical" href="https://githooks.com/" />
 
     <link
-      href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.no-icons.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
@@ -49,77 +49,68 @@
     <style>
       body {
         font-family: "Inconsolata", monospace, sans-serif;
-        color: #494949;
-        font-size: 1.15em;
-        margin-bottom: 1.25em;
+        color: #333;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        max-width: 800px;
+        background: #fff;
+        padding: 2rem 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 8px;
+      }
+
+      h1 {
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #067df7;
       }
 
       h2 {
-        font-size: 22px;
-        line-height: 30px;
-      }
-
-      .container,
-      .container li {
-        line-height: 1.75em;
-      }
-
-      .container li {
-        margin: 0 0 0.35em 1.5em;
-      }
-      
-      .container ul li {
-        list-style-type: circle;
-      }
-
-      .navbar-inner {
-        background: #067df7;
-      }
-
-      .navbar .brand,
-      .navbar .brand a {
-        color: #fff;
-        text-shadow: none;
-        font-size: 24px;
-        margin-bottom: 0;
-        line-height: 1.25em;
+        font-size: 1.5rem;
         font-weight: 700;
-        letter-spacing: 2px;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.5rem;
       }
 
-      .brand:hover {
-        background-color: #333;
-        background-color: rgba(255, 255, 255, 0.05);
-        color: #ffffff;
-        text-decoration: none;
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
       }
 
       code {
+        background-color: #f1f1f1;
         color: #bd10e0;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
       }
 
-      ul,
-      ol {
-        padding: 0;
-        margin: 0 0 0.5em 1em;
+      ul, ol {
+        margin-bottom: 1.5rem;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
       }
 
       hr.soften {
-        margin: 1.5em 0 1.25em 0;
+        margin: 2rem 0;
+        border: 0;
+        border-top: 1px solid #eee;
       }
 
-      p {
-        padding: 0 0 1em;
-      }
-
-      a,
-      a:visited,
-      a:active,
-      a:hover {
+      a {
         color: #067df7;
         text-decoration: none;
-        background: none;
-        font-weight: bold;
+        font-weight: 700;
       }
       a:hover {
         text-decoration: underline;
@@ -199,7 +190,7 @@
 
     <div class="container">
       <div id="body" class="row">
-        <div class="span16">
+        <div class="col-12">
           <h1 class="text-center">
             Git Hooks
           </h1>
@@ -224,7 +215,6 @@
             </svg>
             by <a href="https://hudson.dev">Matthew Hudson</a>
           </p>
-          <hr />
 
           <h2 id="introduction">Introduction</h2>
           <p>Git Hooks are a built-in feature of Git that allow developers to automate tasks and enforce policies throughout the
@@ -260,108 +250,96 @@
           <h2 id="how-to-use-git-hooks">How to Use Git Hooks:</h2>
           <p>
             To use Git Hooks, you simply need to create executable scripts in the <code>.git/hooks</code> directory of your Git
-            repository. The
-            scripts should be named after the Git Hook event they correspond to (e.g., <code>pre-commit</code>,
-            <code>pre-push</code>, <code>post-merge</code>) and have
-            the appropriate permissions (<code>chmod +x</code>). Once the scripts are in place, Git will automatically execute them
-            at the
-            corresponding events.
-            </p>
+            repository. The scripts should be named after the Git Hook event they correspond to (e.g., <code>pre-commit</code>,
+            <code>pre-push</code>, <code>post-merge</code>) and have the appropriate permissions (<code>chmod +x</code>). Once the scripts are in place, Git will automatically execute them at the corresponding events.
+          </p>
+
+          <h3 id="sharing-hooks">Sharing Hooks</h3>
+          <p>
+            By default, Git hooks reside in the <code>.git/hooks</code> directory of your repository. However, this directory is not tracked by Git and is not committed to the repository. To share hooks across a team, you can use the <code>core.hooksPath</code> configuration (introduced in Git 2.9).
+          </p>
+          <ol>
+            <li>Create a directory to store your versioned hooks (e.g., <code>.githooks</code>).</li>
+            <li>Move your hook scripts into that directory and commit them.</li>
+            <li>Configure Git to use this directory: <code>git config core.hooksPath .githooks</code></li>
+          </ol>
+          <p>
+            Many of the <a href="#projects">projects listed below</a> can automate this process for you.
+          </p>
 
           <p>Here's a full list of hooks you can attach scripts to:</p>
           <ul>
             <li>
-              <a
-                href="https://github.com/git/git/blob/master/templates/hooks/applypatch-msg.sample"
-                >applypatch-msg</a
-              >
+              <a href="https://github.com/git/git/blob/master/templates/hooks/applypatch-msg.sample">applypatch-msg</a>
+              - Validates the commit message file for patches from <code>git am</code>.
             </li>
             <li>
-              <a
-                href="https://github.com/git/git/blob/master/templates/hooks/pre-applypatch.sample"
-                >pre-applypatch</a
-              >
+              <a href="https://github.com/git/git/blob/master/templates/hooks/pre-applypatch.sample">pre-applypatch</a>
+              - Runs after a patch is applied but before a commit is made.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_applypatch"
-                >post-applypatch</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#_post_applypatch">post-applypatch</a>
+              - Runs after a patch is applied and a commit is made.
             </li>
             <li>
-              <a
-                href="https://github.com/git/git/blob/master/templates/hooks/pre-commit.sample"
-                >pre-commit</a
-              >
+              <a href="https://github.com/git/git/blob/master/templates/hooks/pre-commit.sample">pre-commit</a>
+              - Runs before a commit is created. Used for linting, testing, and formatting checks.
             </li>
             <li>
-              <a
-                href="https://github.com/git/git/blob/master/templates/hooks/prepare-commit-msg.sample"
-                >prepare-commit-msg</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#_pre_merge_commit">pre-merge-commit</a>
+              - Runs after a merge is successful but before a merge commit is created.
             </li>
             <li>
-              <a
-                href="https://github.com/git/git/blob/master/templates/hooks/commit-msg.sample"
-                >commit-msg</a
-              >
+              <a href="https://github.com/git/git/blob/master/templates/hooks/prepare-commit-msg.sample">prepare-commit-msg</a>
+              - Runs after the default commit message is created but before the editor is started.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_commit"
-                >post-commit</a
-              >
+              <a href="https://github.com/git/git/blob/master/templates/hooks/commit-msg.sample">commit-msg</a>
+              - Validates the commit message after it has been edited. Useful for enforcing message standards.
             </li>
             <li>
-              <a
-                href="https://github.com/git/git/blob/master/templates/hooks/pre-rebase.sample"
-                >pre-rebase</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#_post_commit">post-commit</a>
+              - Runs after a commit is made. Useful for notifications or logging.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_checkout"
-                >post-checkout</a
-              >
+              <a href="https://github.com/git/git/blob/master/templates/hooks/pre-rebase.sample">pre-rebase</a>
+              - Runs before a rebase starts. Can be used to prevent rebasing of protected branches.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_merge"
-                >post-merge</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#_post_checkout">post-checkout</a>
+              - Runs after a <code>git checkout</code> or <code>git switch</code>. Useful for setting up the environment.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#pre-receive"
-                >pre-receive</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#_post_merge">post-merge</a>
+              - Runs after a successful <code>git merge</code> or <code>git pull</code>.
             </li>
             <li>
-              <a
-                href="https://github.com/git/git/blob/master/templates/hooks/update.sample"
-                >update</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#pre-receive">pre-receive</a>
+              - Runs on the server before references are updated. Can be used to enforce push policies.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#post-receive"
-                >post-receive</a
-              >
+              <a href="https://github.com/git/git/blob/master/templates/hooks/update.sample">update</a>
+              - Runs on the server once for each ref being updated.
             </li>
             <li>
-              <a
-                href="https://github.com/git/git/blob/master/templates/hooks/post-update.sample"
-                >post-update</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#post-receive">post-receive</a>
+              - Runs on the server after all references have been updated.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#_pre_auto_gc"
-                >pre-auto-gc</a
-              >
+              <a href="https://github.com/git/git/blob/master/templates/hooks/post-update.sample">post-update</a>
+              - Runs on the server after refs are updated, often used for <code>git update-server-info</code>.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_rewrite"
-                >post-rewrite</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#_pre_auto_gc">pre-auto-gc</a>
+              - Runs before an automatic garbage collection.
             </li>
             <li>
-              <a href="https://www.git-scm.com/docs/githooks#_pre_push"
-                >pre-push</a
-              >
+              <a href="https://www.git-scm.com/docs/githooks#_post_rewrite">post-rewrite</a>
+              - Runs after commands that rewrite commits (e.g., <code>amend</code>, <code>rebase</code>).
+            </li>
+            <li>
+              <a href="https://www.git-scm.com/docs/githooks#_pre_push">pre-push</a>
+              - Runs before a <code>git push</code> starts. Can be used to prevent pushing to certain remotes.
             </li>
           </ul>
 
@@ -511,7 +489,14 @@
             </li>
             <li>
               <a href="https://github.com/typicode/husky">Husky</a> - Git hooks
-              for Node.js, manage your hooks from your package.json.
+              made easy. Popular choice for Node.js projects.
+            </li>
+            <li>
+              <a href="https://github.com/okonet/lint-staged">lint-staged</a> -
+              Run linters against staged git files and don't let 💩 slip into your code base!
+            </li>
+            <li>
+              <a href="https://github.com/tophat/ghks">ghks</a> - A simple, dependency-free Git hook manager for any language.
             </li>
             <li>
               <a href="https://github.com/BernardoSilva/git-hooks-php"
@@ -568,7 +553,7 @@
             </li>
             <li>
               <a href="https://github.com/evilmartians/lefthook">Lefthook</a> -
-              Fast and powerful Git hooks manager for any type of projects.
+              Fast and powerful Git hooks manager for any type of project.
             </li>
             <li>
               <a href="https://github.com/fisker/git-hooks-list"
