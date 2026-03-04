@@ -94,11 +94,11 @@
       }
 
       ul, ol {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.25rem;
       }
 
       hr.soften {
@@ -268,80 +268,126 @@
           </p>
 
           <p>Here's a full list of hooks you can attach scripts to:</p>
-          <ul>
-            <li>
-              <a href="https://github.com/git/git/blob/master/templates/hooks/applypatch-msg.sample">applypatch-msg</a>
-              - Validates the commit message file for patches from <code>git am</code>.
-            </li>
-            <li>
-              <a href="https://github.com/git/git/blob/master/templates/hooks/pre-applypatch.sample">pre-applypatch</a>
-              - Runs after a patch is applied but before a commit is made.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_applypatch">post-applypatch</a>
-              - Runs after a patch is applied and a commit is made.
-            </li>
-            <li>
-              <a href="https://github.com/git/git/blob/master/templates/hooks/pre-commit.sample">pre-commit</a>
-              - Runs before a commit is created. Used for linting, testing, and formatting checks.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#_pre_merge_commit">pre-merge-commit</a>
-              - Runs after a merge is successful but before a merge commit is created.
-            </li>
-            <li>
-              <a href="https://github.com/git/git/blob/master/templates/hooks/prepare-commit-msg.sample">prepare-commit-msg</a>
-              - Runs after the default commit message is created but before the editor is started.
-            </li>
-            <li>
-              <a href="https://github.com/git/git/blob/master/templates/hooks/commit-msg.sample">commit-msg</a>
-              - Validates the commit message after it has been edited. Useful for enforcing message standards.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_commit">post-commit</a>
-              - Runs after a commit is made. Useful for notifications or logging.
-            </li>
-            <li>
-              <a href="https://github.com/git/git/blob/master/templates/hooks/pre-rebase.sample">pre-rebase</a>
-              - Runs before a rebase starts. Can be used to prevent rebasing of protected branches.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_checkout">post-checkout</a>
-              - Runs after a <code>git checkout</code> or <code>git switch</code>. Useful for setting up the environment.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_merge">post-merge</a>
-              - Runs after a successful <code>git merge</code> or <code>git pull</code>.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#pre-receive">pre-receive</a>
-              - Runs on the server before references are updated. Can be used to enforce push policies.
-            </li>
-            <li>
-              <a href="https://github.com/git/git/blob/master/templates/hooks/update.sample">update</a>
-              - Runs on the server once for each ref being updated.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#post-receive">post-receive</a>
-              - Runs on the server after all references have been updated.
-            </li>
-            <li>
-              <a href="https://github.com/git/git/blob/master/templates/hooks/post-update.sample">post-update</a>
-              - Runs on the server after refs are updated, often used for <code>git update-server-info</code>.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#_pre_auto_gc">pre-auto-gc</a>
-              - Runs before an automatic garbage collection.
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#_post_rewrite">post-rewrite</a>
-              - Runs after commands that rewrite commits (e.g., <code>amend</code>, <code>rebase</code>).
-            </li>
-            <li>
-              <a href="https://www.git-scm.com/docs/githooks#_pre_push">pre-push</a>
-              - Runs before a <code>git push</code> starts. Can be used to prevent pushing to certain remotes.
-            </li>
-          </ul>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped">
+              <thead>
+                <tr>
+                  <th>Hook</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="https://github.com/git/git/blob/master/templates/hooks/applypatch-msg.sample">applypatch-msg</a>
+                  </td>
+                  <td>Validates the commit message file for patches from <code>git am</code>.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/git/git/blob/master/templates/hooks/pre-applypatch.sample">pre-applypatch</a>
+                  </td>
+                  <td>Runs after a patch is applied but before a commit is made.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#_post_applypatch">post-applypatch</a>
+                  </td>
+                  <td>Runs after a patch is applied and a commit is made.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/git/git/blob/master/templates/hooks/pre-commit.sample">pre-commit</a>
+                  </td>
+                  <td>Runs before a commit is created. Used for linting, testing, and formatting checks.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#_pre_merge_commit">pre-merge-commit</a>
+                  </td>
+                  <td>Runs after a merge is successful but before a merge commit is created.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/git/git/blob/master/templates/hooks/prepare-commit-msg.sample">prepare-commit-msg</a>
+                  </td>
+                  <td>Runs after the default commit message is created but before the editor is started.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/git/git/blob/master/templates/hooks/commit-msg.sample">commit-msg</a>
+                  </td>
+                  <td>Validates the commit message after it has been edited. Useful for enforcing message standards.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#_post_commit">post-commit</a>
+                  </td>
+                  <td>Runs after a commit is made. Useful for notifications or logging.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/git/git/blob/master/templates/hooks/pre-rebase.sample">pre-rebase</a>
+                  </td>
+                  <td>Runs before a rebase starts. Can be used to prevent rebasing of protected branches.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#_post_checkout">post-checkout</a>
+                  </td>
+                  <td>Runs after a <code>git checkout</code> or <code>git switch</code>. Useful for setting up the environment.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#_post_merge">post-merge</a>
+                  </td>
+                  <td>Runs after a successful <code>git merge</code> or <code>git pull</code>.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#pre-receive">pre-receive</a>
+                  </td>
+                  <td>Runs on the server before references are updated. Can be used to enforce push policies.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/git/git/blob/master/templates/hooks/update.sample">update</a>
+                  </td>
+                  <td>Runs on the server once for each ref being updated.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#post-receive">post-receive</a>
+                  </td>
+                  <td>Runs on the server after all references have been updated.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://github.com/git/git/blob/master/templates/hooks/post-update.sample">post-update</a>
+                  </td>
+                  <td>Runs on the server after refs are updated, often used for <code>git update-server-info</code>.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#_pre_auto_gc">pre-auto-gc</a>
+                  </td>
+                  <td>Runs before an automatic garbage collection.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#_post_rewrite">post-rewrite</a>
+                  </td>
+                  <td>Runs after commands that rewrite commits (e.g., <code>amend</code>, <code>rebase</code>).</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="https://www.git-scm.com/docs/githooks#_pre_push">pre-push</a>
+                  </td>
+                  <td>Runs before a <code>git push</code> starts. Can be used to prevent pushing to certain remotes.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <hr class="soften" />
           <h2 id="tips-for-writing-git-hooks">Tips for Writing Effective Git Hooks:</h2>
